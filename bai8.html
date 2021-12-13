@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tuổi</title>
+</head>
+<body>
+<input type="text" id="nhapSo" placeholder="Nhập một số bất kỳ">
+<button onclick="kiemTra()">Kiểm tra</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function kiemTra() {
+        let soCanKiemTra = parseFloat(document.getElementById("nhapSo").value);
+        if (soCanKiemTra % 1 == 0 && soCanKiemTra > 0 && soCanKiemTra < 120) {
+            document.getElementById("ketQua").innerHTML = soCanKiemTra + " là tuổi của 1 người" ;
+        } else {
+            document.getElementById("ketQua").innerHTML = soCanKiemTra + " không phải là tuổi của 1 người"
+        }
+    }
+</script>
+</body>
+</html>

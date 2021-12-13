@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 1</title>
+</head>
+<body>
+<p>Phương trình bậc 1 có dạng :</p>
+<p>ax + b = 0</p>
+<input type="number" id="nhapA" placeholder="Nhập a">
+<input type="number" id="nhapB" placeholder="Nhập b">
+<button onclick="phuongTrinhBacMot()">Nghiệm của phương trình là :</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function phuongTrinhBacMot() {
+        let numberA = parseFloat(document.getElementById("nhapA").value);
+        let numberB = parseFloat(document.getElementById("nhapB").value);
+        let nghiem = - (numberB / numberA)
+        document.getElementById("ketQua").innerHTML = "Nghiệm của phương trình là: x = " + nghiem
+    }
+
+</script>
+</html>

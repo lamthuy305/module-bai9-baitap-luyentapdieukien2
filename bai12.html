@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cách tính lãi kép</title>
+</head>
+<body>
+<p>Tính lãi kép</p>
+<input type="text" id="tienGoc" placeholder="Số tiền gửi ban đầu">
+<input type="text" id="kyGui" placeholder="Số tháng gửi">
+<input type="text" id="laiSuat" placeholder="Lãi suất ngân hàng theo tháng (%)">
+<button onclick="tinhLaiKep()">Tính lãi tiền gửi ngân hàng</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function tinhLaiKep() {
+        let tienGoc = parseInt(document.getElementById("tienGoc").value);
+        let kyGui = parseInt(document.getElementById("kyGui").value);
+        let laiSuat = parseFloat(document.getElementById("laiSuat").value) /100 ;
+        let tienCuoiKy = tienGoc * Math.pow((1 + laiSuat) , kyGui) ;
+        let tienLai = tienCuoiKy - tienGoc
+        document.getElementById("ketQua").innerHTML = "Tiền lãi là: " + tienLai ;
+    }
+</script>
+</html>

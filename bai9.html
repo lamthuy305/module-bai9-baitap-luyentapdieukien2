@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra 3 cạnh của tam giác</title>
+</head>
+<body>
+<input type="number" id="nhapA" placeholder="Nhập a">
+<input type="number" id="nhapB" placeholder="Nhập b">
+<input type="number" id="nhapC" placeholder="Nhập c">
+<button onclick="kiemTraTamGiac()">Kiểm tra</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function kiemTraTamGiac() {
+        let numberA = parseFloat(document.getElementById("nhapA").value);
+        let numberB = parseFloat(document.getElementById("nhapB").value);
+        let numberC = parseFloat(document.getElementById("nhapC").value);
+        if (numberA > 0 && numberB > 0 && numberC > 0 && numberA + numberB > numberC && numberA + numberC > numberB && numberB + numberC > numberA) {
+            document.getElementById("ketQua").innerHTML = "Đây là 3 cạnh của 1 tam giác"
+        } else {
+            document.getElementById("ketQua").innerHTML = "Đây không phải là 3 cạnh của 1 tam giác"
+        }
+    }
+</script>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển từ mét sang feet</title>
+</head>
+<body>
+<input type="text" id="doDaiM" placeholder="Nhập độ dài (mét)">
+<button onclick="chuyenDoi()">Chuyển đổi</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function chuyenDoi() {
+        let doDaiM = parseFloat(document.getElementById("doDaiM").value);
+        let doDaiFt = doDaiM * 3.2808 ;
+        document.getElementById("ketQua").innerHTML = "Độ dài Ft là : " + doDaiFt ;
+    }
+</script>
+</body>
+</html>

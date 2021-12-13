@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính thuế thu nhập cá nhân</title>
+</head>
+<body>
+<p>Tính thuế thu nhập cá nhân</p>
+<input type="text" id="thunhap" placeholder="Thu nhập sau khi giảm trừ">
+<button onclick="tinhThue()">Tính thuế thu nhập cá nhân</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function tinhThue() {
+        let thuNhapTinhThue = parseInt(document.getElementById("thunhap").value);
+        let tienThue = 0;
+        const bac1 = 5 / 100;
+        const bac2 = 10 / 100;
+        const bac3 = 15 / 100;
+        const bac4 = 20 / 100;
+        const bac5 = 25 / 100;
+        const bac6 = 30 / 100;
+        const bac7 = 35 / 100;
+
+        if (thuNhapTinhThue <= 5) {
+            tienThue = thuNhapTinhThue * bac1;
+            document.getElementById("ketQua").innerHTML = "Tiền thuế Thu Nhập Cá Nhân phải nộp là: " + tienThue;
+        } else if (thuNhapTinhThue <= 10) {
+            tienThue = 5 * bac1 + (thuNhapTinhThue - 5) * bac2;
+            document.getElementById("ketQua").innerHTML = "Tiền thuế Thu Nhập Cá Nhân phải nộp là: " + tienThue;
+        } else if (thuNhapTinhThue <= 18) {
+            tienThue = 5 * bac1 + 5 * bac2 + (thuNhapTinhThue - 10) * bac3;
+            document.getElementById("ketQua").innerHTML = "Tiền thuế Thu Nhập Cá Nhân phải nộp là: " + tienThue;
+        } else if (thuNhapTinhThue <= 32) {
+            tienThue = 5 * bac1 + 5 * bac2 + 8 * bac3 + (thuNhapTinhThue - 18) * bac4;
+            document.getElementById("ketQua").innerHTML = "Tiền thuế Thu Nhập Cá Nhân phải nộp là: " + tienThue;
+        } else if (thuNhapTinhThue <= 52) {
+            tienThue = 5 * bac1 + 5 * bac2 + 8 * bac3 + 15 * bac4 + (thuNhapTinhThue - 32) * bac5;
+            document.getElementById("ketQua").innerHTML = "Tiền thuế Thu Nhập Cá Nhân phải nộp là: " + tienThue;
+        } else if (thuNhapTinhThue <= 80) {
+            tienThue = 5 * bac1 + 5 * bac2 + 8 * bac3 + 15 * bac4 + 20 * bac5 + (thuNhapTinhThue - 52) * bac6;
+            document.getElementById("ketQua").innerHTML = "Tiền thuế Thu Nhập Cá Nhân phải nộp là: " + tienThue;
+        } else if (thuNhapTinhThue > 80) {
+            tienThue = 5 * bac1 + 5 * bac2 + 8 * bac3 + 15 * bac4 + 20 * bac5 + 28 * bac6 + (thuNhapTinhThue - 80) * bac7;
+            document.getElementById("ketQua").innerHTML = "Tiền thuế Thu Nhập Cá Nhân phải nộp là: " + tienThue;
+        } else {
+            document.getElementById("ketQua").innerHTML = "Nhập chưa chính xác";
+        }
+
+    }
+</script>
+
+</html>

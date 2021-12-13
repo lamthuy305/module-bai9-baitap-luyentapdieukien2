@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển từ độ C sang độ F</title>
+</head>
+<body>
+<input type="text" id="doC" placeholder="Nhập nhiệt độ C">
+<button onclick="chuyenDoi()">Chuyển đổi</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function chuyenDoi() {
+        let nhietDoC = parseFloat(document.getElementById("doC").value);
+        let nhietDoF = (nhietDoC *9)/5 + 32;
+        document.getElementById("ketQua").innerHTML = "Nhiệt độ F là : " + nhietDoF ;
+    }
+</script>
+</html>

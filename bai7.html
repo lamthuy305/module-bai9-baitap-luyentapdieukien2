@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Giải phương trình bậc 2</title>
+</head>
+<body>
+<p>Phương trình bậc 2 có dạng :</p>
+<p>ax2 + bx + c = 0</p>
+<input type="number" id="nhapA" placeholder="Nhập a">
+<input type="number" id="nhapB" placeholder="Nhập b">
+<input type="number" id="nhapC" placeholder="Nhập c">
+<button onclick="phuongTrinhBacHai()">Nghiệm của phương trình là :</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function phuongTrinhBacHai() {
+        let numberA = parseFloat(document.getElementById("nhapA").value);
+        let numberB = parseFloat(document.getElementById("nhapB").value);
+        let numberC = parseFloat(document.getElementById("nhapC").value);
+        let delta = parseFloat( numberB * numberB - 4 * numberA * numberC ) ;
+        if (delta < 0) {
+            document.getElementById("ketQua").innerHTML = "Phương trình vô nghiệm";
+        } else if (delta === 0) {
+            let nghiemKep = -(numberB / (2 * numberA))
+            document.getElementById("ketQua").innerHTML = "Phương trình có nghiệm kép: x1 = x2 =  " + nghiemKep;
+        } else {
+            let canDelta = Math.sqrt(delta);
+            let nghiemThuNhat = (-numberB + canDelta) / (2 * numberA);
+            let nghiemThuHai = (-numberB - canDelta) / (2 * numberA);
+            document.getElementById("ketQua").innerHTML = "Phương trình có 2 nghiệm là x1 = " + nghiemThuNhat + " và x2 = " + nghiemThuHai;
+        }
+    }
+
+</script>
+</html>

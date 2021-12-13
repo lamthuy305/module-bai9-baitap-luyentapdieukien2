@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diện tích hình chữ nhật</title>
+</head>
+<body>
+<input type="number" id="chieuDai" placeholder="Nhập chiều dài" min="0">
+<input type="number" id="chieuRong" placeholder="Nhập chiều rộng" min="0">
+
+<button onclick="tinhDienTich()">Tính diện tích hình chữ nhật</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function tinhDienTich() {
+        let chieuDai = parseFloat(document.getElementById("chieuDai").value);
+        let chieuRong = parseFloat(document.getElementById("chieuRong").value);
+        let dienTich = chieuDai * chieuRong;
+        document.getElementById("ketQua").innerHTML = "Diện tích hình chữ nhật là : " + dienTich;
+    }
+
+</script>
+</html>

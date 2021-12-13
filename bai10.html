@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tính giá điện</title>
+</head>
+<body>
+<p>Tính giá điện sinh hoạt</p>
+<input type="text" id="soDienCu" placeholder="Số điện tháng trước">
+<input type="text" id="soDienMoi" placeholder="Số điện tháng này">
+<button onclick="tienDien()">Tính tiền điện</button>
+<p id="ketQua"></p>
+</body>
+<script>
+    function tienDien() {
+        let sodienCu = parseInt(document.getElementById("soDienCu").value);
+        let sodienMoi = parseInt(document.getElementById("soDienMoi").value);
+        let tien = 0;
+        const bac1 = 1678;
+        const bac2 = 1734;
+        const bac3 = 2014;
+        const bac4 = 2536;
+        const bac5 = 2834;
+        const bac6 = 2927;
+
+        let tieuThuTrongThang = sodienMoi - sodienCu
+        if (tieuThuTrongThang <= 50) {
+            tien = tieuThuTrongThang * bac1;
+            document.getElementById("ketQua").innerHTML = "Tiền điện tiêu thụ trong tháng là: " + tien;
+        } else if (tieuThuTrongThang <= 100) {
+            tien = 50 * bac1 + (tieuThuTrongThang - 50) * bac2;
+            document.getElementById("ketQua").innerHTML = "Tiền điện tiêu thụ trong tháng là: " + tien;
+        } else if (tieuThuTrongThang <= 200) {
+            tien = 50 * bac1 + 50 * bac2 + (tieuThuTrongThang - 100) * bac3;
+            document.getElementById("ketQua").innerHTML = "Tiền điện tiêu thụ trong tháng là: " + tien;
+        } else if (tieuThuTrongThang <= 300) {
+            tien = 50 * bac1 + 50 * bac2 + 100 * bac3 + (tieuThuTrongThang - 200) * bac4;
+            document.getElementById("ketQua").innerHTML = "Tiền điện tiêu thụ trong tháng là: " + tien;
+        } else if (tieuThuTrongThang <= 400) {
+            tien = 50 * bac1 + 50 * bac2 + 100 * bac3 + 100 * bac4 + (tieuThuTrongThang - 300) * bac5;
+            document.getElementById("ketQua").innerHTML = "Tiền điện tiêu thụ trong tháng là: " + tien;
+        } else if (tieuThuTrongThang > 400) {
+            tien = 50 * bac1 + 50 * bac2 + 100 * bac3 + 100 * bac4 + 100 * bac5 + (tieuThuTrongThang - 400) * bac6;
+            document.getElementById("ketQua").innerHTML = "Tiền điện tiêu thụ trong tháng là: " + tien;
+        } else {
+            document.getElementById("ketQua").innerHTML = "Nhập chưa chính xác";
+        }
+
+    }
+</script>
+
+
+</html>
